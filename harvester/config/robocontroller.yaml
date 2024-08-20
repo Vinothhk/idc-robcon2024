@@ -1,0 +1,23 @@
+controller_manager:
+  ros__parameters:
+    use_sim_time: true
+    update_rate: 1000 #  Hz
+
+    roboarm_joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    roboarm_joint_controller:
+      type: forward_command_controller/ForwardCommandController
+
+roboarm_joint_controller:
+  ros__parameters:
+  
+    joints:
+      - link1_joint
+      - link2_joint
+    interface_name: position
+    command_interfaces:
+      - position 
+    state_interfaces:
+      - position
+      - velocity
